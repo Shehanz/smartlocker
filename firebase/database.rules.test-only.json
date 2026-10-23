@@ -1,0 +1,20 @@
+{
+  "rules": {
+    "accessRequests": {
+      ".read": false,
+      "$requestId": {
+        ".write": true,
+        ".validate": "newData.hasChildren(['requestId', 'deviceId', 'uid', 'status', 'createdAt']) && newData.child('requestId').val() === $requestId && newData.child('status').val() === 'pending' && newData.child('uid').isString() && newData.child('uid').val().matches(/^[A-Fa-f0-9]{8,40}$/)"
+      }
+    },
+    "accessResponses": {
+      ".read": true,
+      ".write": false
+    },
+    "students": { ".read": false, ".write": false },
+    "cards": { ".read": false, ".write": false },
+    "lockers": { ".read": false, ".write": false },
+    "devices": { ".read": false, ".write": false },
+    "accessLogs": { ".read": false, ".write": false }
+  }
+}

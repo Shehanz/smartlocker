@@ -37,3 +37,5 @@ Route::get('/test-firebase', function () {
         ], 500);
     }
 });
+
+require __DIR__.'/locker.php';
